@@ -5,15 +5,18 @@ function AddNote({ reRender }) {
   const [description, setDescription] = useState("");
   const addNote = async () => {
     const userID = JSON.parse(localStorage.getItem("user"))._id;
-    let response = await fetch("http://localhost:4488/api/n2/notes/", {
-      method: "post",
-      body: JSON.stringify({ title, description, userID }),
-      headers: {
-        "Content-Type": "application/json",
-        authorization: `bearer ${JSON.parse(localStorage.getItem("token"))}`,
-        userID: userID,
-      },
-    });
+    let response = await fetch(
+      "https://inotes-web-server.onrender.com/api/n2/notes/",
+      {
+        method: "post",
+        body: JSON.stringify({ title, description, userID }),
+        headers: {
+          "Content-Type": "application/json",
+          authorization: `bearer ${JSON.parse(localStorage.getItem("token"))}`,
+          userID: userID,
+        },
+      }
+    );
     response = await response.json();
     if (response.success === true) {
       setDescription("");

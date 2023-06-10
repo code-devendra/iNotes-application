@@ -14,13 +14,16 @@ function Register() {
   }, []);
 
   const validateSubmit = async () => {
-    let response = await fetch("http://localhost:4488/api/n1/user/new", {
-      method: "post",
-      body: JSON.stringify({ name, email, password }),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+    let response = await fetch(
+      "https://inotes-web-server.onrender.com/api/n1/user/new",
+      {
+        method: "post",
+        body: JSON.stringify({ name, email, password }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
     response = await response.json();
     if (response.success === false) {
       setError(true);

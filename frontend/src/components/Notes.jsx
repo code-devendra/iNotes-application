@@ -7,14 +7,17 @@ function Notes() {
   const [allNotes, setAllNotes] = useState([]);
   const getAllNotes = async () => {
     const userID = JSON.parse(localStorage.getItem("user"))._id;
-    let response = await fetch("http://localhost:4488/api/n2/notes/", {
-      method: "get",
-      headers: {
-        "Content-Type": "application/json",
-        authorization: `bearer ${JSON.parse(localStorage.getItem("token"))}`,
-        userID: userID,
-      },
-    });
+    let response = await fetch(
+      "https://inotes-web-server.onrender.com/api/n2/notes/",
+      {
+        method: "get",
+        headers: {
+          "Content-Type": "application/json",
+          authorization: `bearer ${JSON.parse(localStorage.getItem("token"))}`,
+          userID: userID,
+        },
+      }
+    );
     response = await response.json();
     setAllNotes(response.notes);
   };
@@ -24,7 +27,7 @@ function Notes() {
   const deleteNote = async (id) => {
     const userID = JSON.parse(localStorage.getItem("user"))._id;
     let response = await fetch(
-      `http://localhost:4488/api/n2/notes/?noteID=${id}`,
+      `https://inotes-web-server.onrender.com/api/n2/notes/?noteID=${id}`,
       {
         method: "delete",
         headers: {

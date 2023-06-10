@@ -11,13 +11,16 @@ function Login() {
     if (auth) navigate("/notes");
   }, []);
   const validateSubmit = async () => {
-    let response = await fetch("http://localhost:4488/api/n1/user", {
-      method: "post",
-      body: JSON.stringify({ email, password }),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+    let response = await fetch(
+      "https://inotes-web-server.onrender.com/api/n1/user",
+      {
+        method: "post",
+        body: JSON.stringify({ email, password }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
     response = await response.json();
     if (response.success === false) {
       setError(true);
