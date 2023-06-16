@@ -15,26 +15,6 @@ Welcome to iNotes, a revolutionary note-making web application built with the ME
 
 To use iNotes, simply visit our live site at [https://inotes-seven.vercel.app/](https://inotes-seven.vercel.app/). There's no need to install anything or set up a local development environment. You can start creating and managing your notes right away.
 
-**Or**
-
-To use iNotes locally, follow these steps:
-
-1. Clone the repository: `git clone https://github.com/code-devendra/iNotes-application.git`
-2. Navigate to the project directory: `cd iNotes-application`
-3. Install the required dependencies:
-   - Backend: `cd backend && npm install`
-   - Frontend: `cd frontend && npm install`
-4. Configure the environment variables:
-   - Create a `.env` file in the `backend` directory.
-   - Add the following variables:
-     ```
-     MONGODB_URI=<your_mongodb_connection_string>
-     JWT_SECRET=<your_jwt_secret_key>
-     ```
-5. Start the backend server: `cd backend && npm start`
-6. In a new terminal, start the frontend development server: `cd frontend && npm start`
-7. Open your browser and visit `http://localhost:5173` to access iNotes.
-
 ## Contributing
 
 We welcome contributions from the community to improve iNotes and make it even better. If you'd like to contribute, please follow these guidelines:
