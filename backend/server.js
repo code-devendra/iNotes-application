@@ -10,7 +10,11 @@ const notFound = require("./middleware/notFound");
 const app = express();
 const PORT = process.env.PORT || 7000;
 
-app.use(cors());
+const corsOptions = {
+  origin: "https://inotes-seven.vercel.app",
+};
+
+app.use(cors(corsOptions));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
