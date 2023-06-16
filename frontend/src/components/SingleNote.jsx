@@ -8,9 +8,7 @@ function SingleNote() {
   const getNoteDetail = async () => {
     const userID = JSON.parse(localStorage.getItem("user"))._id;
     let response = await fetch(
-      `${import.meta.env.VITE_SERVER_API_URI}/api/n2/notes/?noteID=${
-        params.id
-      }`,
+      `${import.meta.env.VITE_SERVER_API_URI}api/n2/notes/?noteID=${params.id}`,
       {
         method: "get",
         headers: {
