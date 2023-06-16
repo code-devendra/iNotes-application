@@ -15,7 +15,7 @@ function Register() {
 
   const validateSubmit = async () => {
     let response = await fetch(
-      `${import.meta.env.VITE_SERVER_API_URI}api/n1/user/new`,
+      `${import.meta.env.VITE_SERVER_API_URI}/api/n1/user/new`,
       {
         method: "post",
         body: JSON.stringify({ name, email, password }),
