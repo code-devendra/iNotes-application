@@ -8,7 +8,7 @@ function Notes() {
   const getAllNotes = async () => {
     const userID = JSON.parse(localStorage.getItem("user"))._id;
     let response = await fetch(
-      "https://inotes-web-server.onrender.com/api/n2/notes/",
+      `${import.meta.env.VITE_SERVER_API_URI}api/n2/notes/`,
       {
         method: "get",
         headers: {
@@ -27,7 +27,7 @@ function Notes() {
   const deleteNote = async (id) => {
     const userID = JSON.parse(localStorage.getItem("user"))._id;
     let response = await fetch(
-      `https://inotes-web-server.onrender.com/api/n2/notes/?noteID=${id}`,
+      `${import.meta.env.VITE_SERVER_API_URI}api/n2/notes/?noteID=${id}`,
       {
         method: "delete",
         headers: {

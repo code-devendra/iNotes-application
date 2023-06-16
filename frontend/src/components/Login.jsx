@@ -12,7 +12,7 @@ function Login() {
   }, []);
   const validateSubmit = async () => {
     let response = await fetch(
-      "https://inotes-web-server.onrender.com/api/n1/user",
+      `${import.meta.env.VITE_SERVER_API_URI}api/n1/user`,
       {
         method: "post",
         body: JSON.stringify({ email, password }),
